@@ -1,0 +1,88 @@
+- vector<string> words;
+  string word;
+
+  words.push_back(word) 		//word를 words vector에 차근차근 넣어주는 것
+  sort(words.begin(), words.end()) 	//words의 첫번째 인덱스부터 마지막 인덱스까지 sorting 해주는 것
+  : Allwords_simple.cpp
+
+- vector<string> words;
+  /* current stream: 1, 1, 2, 3, 3, 3, 4, 4, 5 */
+  vector<string>::iterator itr = unique(words.begin(), words.end()); //중복되는 값들은 뒤에 한꺼번에 보낸 후, 
+                                                                     // 그 값 중 첫번째 pointer를 가지는 iterator
+  /* current stream: 1, 2, 3, 4, 5, 1(itr), 3, 3, 4 */
+  words.erase(itr, words.end());				     //itr부터 마지막의 값들을 지움
+  /* current stream: 1, 2, 3, 4, 5 */
+  : Allwords_unique.cpp
+
+- char ch = 'x';
+  string str(3, ch); 	
+  --> str == xxx
+  : Allwords_alpha.cpp
+
+- istream is;
+  
+  if (is)
+      is.unget();	//stream cursor를 한칸 앞으로 다시 되돌려 놓는 것
+  else
+      is.clear();	//stream 초기화
+
+  swap(word, str);	//word = str, improving the process (Ctrl + C)
+  word = std::move(str) //word = str, (Ctrl + X)
+  : Allwords_proalpha.cpp
+
+* <algoritm> functions require contatiners'(eg. vetor) iterator
+
+- list<string> words;   //vector말고 list
+  sort(words.begin(), words.end()); //<algorithm>에서 부르는 것 & list object는 사용 불가능(에러 발생)
+  words.sort();			    //list class에서 부르는 것 & list object 사용 가능
+
+  list<string>::iterator itr = unique(words.begin(), words.end()); //<algorithm>에서 부르는 것 (지워주지 않고 duplicates의 위치만 가리켜줌)
+  words.erase(itr, words.end());         
+  words.unique();						   //list class에서 부르는 것 (duplicates를 지워주기까지 함)
+  
+  reverse(words.begin(), words.end()); //값 순서 뒤집기
+  : Allwords_list.cpp
+
+- list<string> words;
+  string word;
+  words.insert(itr, word);    //itr index에 word initialize
+  : Allwords_optlist.cpp
+
+- infile.clear();
+  infile.seekg(0, ios::beg);
+  : stream 초기화
+
+- STL Containers
+  : Sequential <vector, list, array, deque>
+  : Associative <set, map>
+
+- vector<unsigned> vec(10);
+  fill(vec.begin(), vec.end() - 5, 100);
+  
+  처음부터 ~ 끝에서 5번째까지 100으로 채우기
+  : VectorExercises.cpp
+==========================================================================================
+random access iterator
+- vector, deque
+
+ bidirectional iterator
+- list
+
+populate unique values
+- set
+==========================================================================================
+Random Access ============================================================================
+SORTING
+sort(#.begin(), #.end());
+
+==========================================================================================
+Bidirection ==============================================================================
+SORTING
+#.sort();
+
+
+
+
+
+
+
